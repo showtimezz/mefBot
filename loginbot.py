@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import os.path
 from os import path
+from fileValidation import createFile
 
 class user:
     def __init__(self, name, pwd):
@@ -10,12 +11,7 @@ class user:
         self.pwd=pwd
 
 if path.exists('loginInfo.txt') == False:
-    f= open("loginInfo.txt", "w+")
-    print("Input your username")
-    f.write(input()+"\n")
-    print("Input your password")
-    f.write(input()+"\n")
-    f.close()
+    createFile()
 
 f=open("loginInfo.txt", "r")
 info=f.readlines()
