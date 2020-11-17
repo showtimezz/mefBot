@@ -5,6 +5,11 @@ import os.path
 from os import path
 from fileValidation import createFile
 
+moodle="https://mef-moodle.nc-cloud.com/"
+engleski="https://mef-moodle.nc-cloud.com/course/view.php?id=6"
+matematika="https://mef-moodle.nc-cloud.com/course/view.php?id=78"
+oit="https://mef-moodle.nc-cloud.com/course/view.php?id=77"
+programiranje="https://mef-moodle.nc-cloud.com/course/view.php?id=79"
 class user:
     def __init__(self, name, pwd):
         self.name=name
@@ -20,7 +25,8 @@ user.pwd=info[1]
 
 website=webdriver.Firefox()
 website.maximize_window()
-website.get("https://mef-moodle.nc-cloud.com/")
+website.get(moodle)
+website.implicitly_wait(2)
 loginButton=website.find_element_by_class_name("btn-login-top")
 loginButton.click()
 
@@ -30,4 +36,7 @@ submitButton=website.find_element_by_xpath("//button[@type='submit']")
 
 usernameInput.send_keys(user.name + Keys.ENTER)
 passwordInput.send_keys(user.pwd + Keys.ENTER)
+
+
 submitButton.click()
+website.get(oit)
