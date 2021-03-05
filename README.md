@@ -12,11 +12,12 @@ In order to acces specific courses, you will also need to change the course vari
 
 **Note: To use the developmental google meets feature you have to create a new firefox profile. [This guide](https://www.google.com) explains how to do just that. If you want the program to work out of the box, name your profile "GoogleMeet"*
 
-### Prerequisites
+### Prerequisites/Dependencies
 
 
 
 ```
+Firefox
 Python 3.x
 pip
 selenium
